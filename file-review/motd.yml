@@ -37,16 +37,16 @@
     - name: place files/issue into the /etc/ directory
       copy:
         src: files/issue
-        dest: /etc/
+        dest: /etc/issue
         owner: root
         group: root
         mode: 0644
     
     - name: ensure that /etc/issue.net is a symbolic link to /etc/issue
-      file:
-        path: /etc/issue.net
+      files:
+        src: /etc/issue
+        dest: /etc/issue.net
         state: link
-        target: /etc/issue
         owner: root
         group: root
         force: yes
