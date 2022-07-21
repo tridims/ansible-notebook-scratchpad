@@ -43,7 +43,7 @@
         mode: 0644
     
     - name: ensure that /etc/issue.net is a symbolic link to /etc/issue
-      files:
+      file:
         src: /etc/issue
         dest: /etc/issue.net
         state: link
